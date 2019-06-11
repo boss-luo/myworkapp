@@ -1,0 +1,78 @@
+<%- include ./common/header.ejs  %>
+    <div class="container-fluid">
+        <div class="col-sm-10 col-sm-offset-1" style="margin-top:50px;">
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    用户列表
+                </div>
+                <div class="panel-body">
+                    <form role="form" class="form-inline">
+                        <div class="form-group">
+                            <label for="name">用户名</label>
+                            <input type="text" class="form-control" id="name" placeholder="请输入用户名">
+                        </div>
+
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-default">开始搜索</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="table-responsive">
+                <table class="table table-striped ">
+                    <thead>
+                        <tr>
+                            <th>编号</th>
+                            <th>用户名</th>
+                            <th>密码</th>
+                            <th>邮箱</th>
+
+
+
+                            <th class="text-center">操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+
+                        <% for(var i=0;i<userdata.length;i++){  %>
+                            <tr>
+                                <td>
+                                    <%=i+1%>
+                                </td>
+
+                                <td>
+                                    <%=userdata[i].username%>
+                                </td>
+                                <td>
+                                    <%=userdata[i].password%>
+                                </td>
+
+
+
+
+
+                                <td>
+                                    <%=userdata[i].email%>
+
+
+                                </td>
+
+                                <td class="text-center">
+                                    <a href="" class="btn btn-success">修改</a>
+                                    <a href="" class="btn btn-danger">删除</a>
+                                </td>
+                            </tr>
+                            <% }%>
+
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+    </div>
+
+    <%- include  ./common/footer.ejs  %>
